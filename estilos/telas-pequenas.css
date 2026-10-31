@@ -83,6 +83,7 @@ header {
 
 nav {
     display: none;
+    color: var(--branco);
     background-color: var(--tinta);
 }
 
