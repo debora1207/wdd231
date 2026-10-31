@@ -1,0 +1,278 @@
+:root {
+    --tinta: #1c1b3a;
+    --indigo: #3b3f9e;
+    --indigo-escuro: #2a2d75;
+    --amarelo: #ffc83d;
+    --fundo: #f4f5fa;
+    --painel: #dde1ee;
+    --rodape: #c3c8dc;
+    --borda: #8e95bb;
+    --branco: #ffffff;
+    --fonte-titulo: "Fraunces", Georgia, serif;
+    --fonte-texto: "Work Sans", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--tinta);
+    background-color: var(--fundo);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2 {
+    font-family: var(--fonte-titulo);
+    line-height: 1.2;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--indigo);
+    outline-offset: 2px;
+}
+
+/* ---------- Cabeçalho e navegação ---------- */
+
+header {
+    background-color: var(--branco);
+}
+
+.barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--fonte-titulo);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+#botaoMenu {
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--tinta);
+    background: transparent;
+    border: 2px solid var(--tinta);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+#botaoMenu:hover {
+    background-color: var(--amarelo);
+}
+
+nav {
+    display: none;
+    background-color: var(--tinta);
+}
+
+nav.aberto {
+    display: block;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 0.85rem 1rem;
+    font-weight: 600;
+    color: var(--branco);
+    text-decoration: none;
+    border-bottom: 1px solid #3a3a63;
+}
+
+nav a[aria-current="page"] {
+    background-color: var(--indigo);
+}
+
+nav a:hover,
+nav a[aria-current="page"]:hover {
+    color: var(--tinta);
+    background-color: var(--amarelo);
+}
+
+nav a:focus-visible {
+    outline-color: var(--amarelo);
+    outline-offset: -3px;
+}
+
+/* ---------- Conteúdo ---------- */
+
+main {
+    padding: 1rem;
+}
+
+main h1 {
+    margin: 0.5rem 0 1rem;
+    font-size: 2rem;
+}
+
+main section {
+    margin-bottom: 1.25rem;
+}
+
+main h2 {
+    margin: 0;
+    padding: 0.6rem 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--branco);
+    background-color: var(--tinta);
+}
+
+.painel {
+    padding: 1rem;
+    background-color: var(--painel);
+}
+
+.painel p:first-child {
+    margin-top: 0;
+}
+
+.painel p:last-child {
+    margin-bottom: 0;
+}
+
+.foto img {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+}
+
+/* ---------- Filtros ---------- */
+
+.filtros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.filtro {
+    min-height: 44px;
+    padding: 0.5rem;
+    font-weight: 600;
+    color: var(--tinta);
+    background-color: var(--painel);
+    border: 1px solid var(--tinta);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.filtro:hover {
+    background-color: var(--amarelo);
+}
+
+.filtro[aria-pressed="true"] {
+    color: var(--branco);
+    background-color: var(--indigo);
+}
+
+.filtro[aria-pressed="true"]:hover {
+    color: var(--tinta);
+    background-color: var(--amarelo);
+}
+
+/* ---------- Cartões de curso ---------- */
+
+.cartoes {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cartao {
+    padding: 0.6rem 1rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: var(--painel);
+    border: 2px dashed var(--borda);
+    border-radius: 0.4rem;
+}
+
+.cartao .situacao {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.cartao.concluido {
+    color: var(--branco);
+    background-color: var(--indigo);
+    border: 2px solid var(--indigo-escuro);
+}
+
+.total {
+    margin: 1rem 0 0;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* ---------- Rodapé ---------- */
+
+footer {
+    margin-top: 1rem;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0 1rem 1rem;
+    list-style: none;
+}
+
+.redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: var(--tinta);
+    border-radius: 50%;
+}
+
+.redes a:hover {
+    background-color: var(--amarelo);
+}
+
+.rodape-info {
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--rodape);
+    border-top: 1px solid var(--borda);
+}
+
+.rodape-info p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
