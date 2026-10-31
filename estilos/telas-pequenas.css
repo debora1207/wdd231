@@ -43,7 +43,7 @@ button:focus-visible {
     outline-offset: 2px;
 }
 
-/* ---------- Cabeçalho e navegação ---------- */
+/* --- Cabeçalho e navegação --- */
 
 header {
     background-color: var(--branco);
@@ -121,7 +121,7 @@ nav a:focus-visible {
     outline-offset: -3px;
 }
 
-/* ---------- Conteúdo ---------- */
+/* --- Conteúdo --- */
 
 main {
     padding: 1rem;
@@ -166,7 +166,7 @@ main h2 {
     border-radius: 0.5rem;
 }
 
-/* ---------- Filtros ---------- */
+/* --- Filtros --- */
 
 .filtros {
     display: grid;
@@ -200,7 +200,7 @@ main h2 {
     background-color: var(--amarelo);
 }
 
-/* ---------- Cartões de curso ---------- */
+/* --- Cartões de curso --- */
 
 .cartoes {
     display: grid;
@@ -237,7 +237,7 @@ main h2 {
     text-align: center;
 }
 
-/* ---------- Rodapé ---------- */
+/* --- Rodapé --- */
 
 footer {
     margin-top: 1rem;
