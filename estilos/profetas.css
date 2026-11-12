@@ -1,0 +1,110 @@
+:root {
+    --tinta: #1c1b3a;
+    --indigo: #3b3f9e;
+    --amarelo: #ffc83d;
+    --fundo: #ffffff;
+    --painel: #dde1ee;
+    --branco: #ffffff;
+    --fonte-titulo: "Fraunces", Georgia, serif;
+    --fonte-texto: "Work Sans", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    line-height: 1.5;
+    color: var(--tinta);
+    background-color: var(--fundo);
+}
+
+header {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    background-color: var(--painel);
+    border-bottom: 2px solid var(--tinta);
+}
+
+h1,
+h2 {
+    font-family: var(--fonte-titulo);
+    line-height: 1.2;
+    color: var(--indigo);
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+main {
+    padding: 0.75rem;
+}
+
+/* Grid responsivo: as colunas se ajustam sozinhas, sem media queries */
+#cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 1.25rem;
+}
+
+#cartoes section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--painel);
+    border: 1px solid var(--indigo);
+}
+
+#cartoes h2 {
+    margin: 0.25rem 0 1rem;
+    font-size: 1.6rem;
+}
+
+#cartoes dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.1rem 0.5rem;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 0 1.25rem;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    text-align: left;
+    border: 1px solid var(--branco);
+    outline: 1px solid var(--indigo);
+    background-color: var(--branco);
+}
+
+#cartoes dt {
+    font-weight: 600;
+    text-align: right;
+    color: var(--indigo);
+}
+
+#cartoes dd {
+    margin: 0;
+}
+
+#cartoes img {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 340 / 440;
+    object-fit: cover;
+    border: 2px solid var(--branco);
+    box-shadow: 0 0 16px 6px rgba(59, 63, 158, 0.35);
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    color: var(--branco);
+    background-color: var(--tinta);
+}
