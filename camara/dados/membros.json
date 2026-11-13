@@ -1,0 +1,92 @@
+{
+    "membros": [
+        {
+            "nome": "Forja Digital Tecnologia",
+            "endereco": "Rua das Acácias, 214",
+            "cidade": "Osasco SP 06010-100",
+            "telefone": "(11) 3652-0148",
+            "site": "https://www.forjadigital.example",
+            "imagem": "logo-fd.svg",
+            "nivel": 3,
+            "categoria": "Tecnologia",
+            "descricao": "Desenvolvimento de sites e sistemas para pequenas empresas."
+        },
+        {
+            "nome": "Pixel Osasco Design",
+            "endereco": "Av. das Nações, 876",
+            "cidade": "Osasco SP 06020-190",
+            "telefone": "(11) 3698-5643",
+            "site": "https://www.pixelosasco.example",
+            "imagem": "logo-po.svg",
+            "nivel": 2,
+            "categoria": "Design",
+            "descricao": "Identidade visual, embalagens e materiais gráficos."
+        },
+        {
+            "nome": "Rota Contábil Assessoria",
+            "endereco": "Rua Horizontes, 342",
+            "cidade": "Osasco SP 06030-110",
+            "telefone": "(11) 3456-2189",
+            "site": "https://www.rotacontabil.example",
+            "imagem": "logo-rc.svg",
+            "nivel": 3,
+            "categoria": "Contabilidade",
+            "descricao": "Abertura de empresas, impostos e consultoria fiscal."
+        },
+        {
+            "nome": "Sabor da Praça Café",
+            "endereco": "Praça Central, 15",
+            "cidade": "Osasco SP 06040-010",
+            "telefone": "(11) 3321-7654",
+            "site": "https://www.saborpraca.example",
+            "imagem": "logo-sp.svg",
+            "nivel": 1,
+            "categoria": "Alimentação",
+            "descricao": "Cafés, salgados e almoço executivo."
+        },
+        {
+            "nome": "Vitrine Marketing Local",
+            "endereco": "Rua Digital, 298",
+            "cidade": "Osasco SP 06050-400",
+            "telefone": "(11) 3412-6789",
+            "site": "https://www.vitrinemarketing.example",
+            "imagem": "logo-vm.svg",
+            "nivel": 2,
+            "categoria": "Marketing",
+            "descricao": "Divulgação e redes sociais para o comércio local."
+        },
+        {
+            "nome": "Livro & Letra Livraria",
+            "endereco": "Av. Comercial, 1245",
+            "cidade": "Osasco SP 06060-020",
+            "telefone": "(11) 3298-5432",
+            "site": "https://www.livroeletra.example",
+            "imagem": "logo-ll.svg",
+            "nivel": 1,
+            "categoria": "Comércio",
+            "descricao": "Livros, papelaria e encontros de leitura."
+        },
+        {
+            "nome": "Clínica Vida Plena",
+            "endereco": "Rua Progresso, 376",
+            "cidade": "Osasco SP 06070-260",
+            "telefone": "(11) 3345-9876",
+            "site": "https://www.vidaplena.example",
+            "imagem": "logo-vp.svg",
+            "nivel": 3,
+            "categoria": "Saúde",
+            "descricao": "Atendimento clínico e check-ups para a família."
+        },
+        {
+            "nome": "Aprender+ Idiomas",
+            "endereco": "Av. Inovação, 453",
+            "cidade": "Osasco SP 06080-010",
+            "telefone": "(11) 3567-8901",
+            "site": "https://www.aprendermais.example",
+            "imagem": "logo-am.svg",
+            "nivel": 2,
+            "categoria": "Educação",
+            "descricao": "Cursos de inglês e espanhol para todas as idades."
+        }
+    ]
+}
