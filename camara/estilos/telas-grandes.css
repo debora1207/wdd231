@@ -1,3 +1,5 @@
+/* Telas grandes: este arquivo vem depois de telas-pequenas.css */
+
 @media (min-width: 768px) {
 
     .barra {
@@ -53,7 +55,7 @@
         height: 14rem;
     }
 
-    #membros.grade {
+    .grade {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
 
@@ -81,5 +83,39 @@
 
     .redes {
         justify-content: flex-start;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .inicio {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .banner,
+    .destaques {
+        grid-column: 1 / -1;
+    }
+
+    .banner img {
+        height: 340px;
+        object-position: 50% 50%;
+    }
+
+    .banner-texto {
+        padding: 2.5rem;
+    }
+
+    .banner-texto h1 {
+        font-size: 2.75rem;
+    }
+
+    .banner-texto p {
+        font-size: 1.15rem;
+    }
+
+    .destaques .grade {
+        grid-template-columns: repeat(3, 1fr);
     }
 }

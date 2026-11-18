@@ -48,6 +48,7 @@ button:focus-visible {
     outline-offset: 2px;
 }
 
+/* ---------- Cabeçalho e navegação ---------- */
 
 header {
     background-color: var(--branco);
@@ -132,6 +133,7 @@ nav a:focus-visible {
     outline-offset: -3px;
 }
 
+/* ---------- Conteúdo ---------- */
 
 main {
     padding: 1rem;
@@ -237,8 +239,9 @@ main {
     background-color: var(--ouro);
 }
 
+/* ---------- Visualização em grade ---------- */
 
-#membros.grade {
+.grade {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -335,8 +338,9 @@ main {
     word-break: break-word;
 }
 
+/* ---------- Visualização em lista ---------- */
 
-#membros.lista {
+.lista {
     display: block;
 }
 
@@ -363,6 +367,191 @@ main {
     margin-top: 0.5rem;
 }
 
+/* ---------- Página inicial ---------- */
+
+.inicio {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--primaria-escura);
+    border-radius: 1rem;
+}
+
+.banner img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: 54% 50%;
+}
+
+.banner-texto {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    color: var(--branco);
+    background: linear-gradient(to top, rgba(10, 54, 66, 0.95) 10%, rgba(10, 54, 66, 0.3) 70%, rgba(10, 54, 66, 0));
+}
+
+.banner-texto h1 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+.banner-texto p {
+    margin: 0;
+    max-width: 34rem;
+}
+
+.botao {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    color: var(--texto);
+    text-decoration: none;
+    background-color: var(--ouro);
+    border-radius: 0.5rem;
+}
+
+.botao:hover {
+    background-color: var(--branco);
+}
+
+.bloco {
+    padding: 1.25rem;
+    background-color: var(--branco);
+    border: 1px solid #dfe5e6;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bloco h2,
+.destaques h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.4rem;
+}
+
+.bloco h3 {
+    font-family: var(--fonte-texto);
+}
+
+.eventos ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.eventos li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e3e8e9;
+}
+
+.eventos li:first-child {
+    padding-top: 0;
+}
+
+.eventos li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.eventos time {
+    flex-shrink: 0;
+    min-width: 3.75rem;
+    padding: 0.35rem 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--branco);
+    background-color: var(--primaria);
+    border-radius: 0.5rem;
+}
+
+.eventos h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.eventos p {
+    margin: 0.15rem 0 0;
+    font-size: 0.9rem;
+    color: var(--suave);
+}
+
+.clima-atual {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.clima-atual img {
+    background-color: #eef3f3;
+    border-radius: 50%;
+}
+
+.temperatura {
+    margin: 0;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.descricao-clima {
+    margin: 0.2rem 0 0;
+    color: var(--suave);
+}
+
+.clima h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+}
+
+.previsao {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.previsao li {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.85rem;
+    text-align: center;
+    background-color: #eef3f3;
+    border-radius: 0.5rem;
+}
+
+.previsao .dia,
+.previsao .temps {
+    display: block;
+}
+
+.previsao .dia {
+    font-weight: 600;
+}
+
+.destaques .subtitulo {
+    margin: 0 0 1rem;
+    color: var(--suave);
+}
+
+/* ---------- Rodapé ---------- */
 
 footer {
     margin-top: 1.5rem;
