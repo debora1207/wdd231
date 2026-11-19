@@ -1,5 +1,3 @@
-// Código compartilhado pelas páginas que exibem membros (diretório e página inicial)
-
 export const niveis = {
     1: 'Membro',
     2: 'Prata',
@@ -19,7 +17,6 @@ export function criarCartao(membro) {
     const cartao = document.createElement('article');
     cartao.classList.add('cartao');
 
-    // Área do logotipo
     const areaLogo = document.createElement('div');
     areaLogo.classList.add('area-logo');
 
@@ -36,7 +33,6 @@ export function criarCartao(membro) {
 
     areaLogo.append(logo, cidadeTopo);
 
-    // Corpo do cartão
     const corpo = document.createElement('div');
     corpo.classList.add('corpo');
 

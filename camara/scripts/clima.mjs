@@ -1,4 +1,3 @@
-// Configuração: cadastre-se em openweathermap.org, gere sua chave (API key) e cole abaixo.
 const CHAVE_API = '42b185f884ec5682e86f43ebe494fcdb';
 const LATITUDE = -23.5329;   // Osasco, SP
 const LONGITUDE = -46.7917;

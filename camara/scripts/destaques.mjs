@@ -3,7 +3,6 @@ import { obterMembros, criarCartao } from './membros.mjs';
 const destaques = document.querySelector('#destaques');
 const QUANTIDADE = 3;
 
-// Embaralha uma cópia da lista (algoritmo de Fisher-Yates)
 const embaralhar = (lista) => {
     const copia = [...lista];
     for (let i = copia.length - 1; i > 0; i--) {

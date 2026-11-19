@@ -16,7 +16,6 @@ async function exibirMembros() {
     }
 }
 
-// Alternar entre grade e lista
 const definirVisualizacao = (modo) => {
     const grade = modo === 'grade';
 

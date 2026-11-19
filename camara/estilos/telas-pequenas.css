@@ -4,14 +4,18 @@
     --secundaria: #e36414;
     --ouro: #f4c542;
     --fundo: #f4f6f6;
+    --claro: #eef3f3;
+    --zebra: #e6f1f3;
+    --linha: #dfe5e6;
     --texto: #1d2b2f;
     --suave: #4a5a5e;
     --link: #0a58ca;
     --branco: #ffffff;
-    --zebra: #e6f1f3;
+    --sombra: 0 1px 4px #00000026;
     --fonte-titulo: "Lora", Georgia, serif;
     --fonte-texto: "Inter", Arial, sans-serif;
 }
+
 
 *,
 *::before,
@@ -21,21 +25,42 @@
 
 body {
     font-family: var(--fonte-texto);
-    font-size: 1rem;
     line-height: 1.5;
     color: var(--texto);
     background-color: var(--fundo);
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+h1,
+h2,
+h3,
+p,
+ul,
+address {
+    margin: 0;
 }
 
 h1,
 h2 {
     font-family: var(--fonte-titulo);
     line-height: 1.2;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -48,25 +73,36 @@ button:focus-visible {
     outline-offset: 2px;
 }
 
-/* ---------- Cabeçalho e navegação ---------- */
+button {
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    color: var(--primaria-escura);
+    background-color: var(--branco);
+    border: 2px solid var(--primaria);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
 
 header {
     background-color: var(--branco);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--sombra);
 }
 
-.barra {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
-}
-
+.barra,
 .marca {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+}
+
+.barra {
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+}
+
+.marca {
     font-family: var(--fonte-titulo);
     font-size: 1.05rem;
     font-weight: 700;
@@ -77,18 +113,10 @@ header {
 #botaoMenu {
     flex-shrink: 0;
     min-width: 44px;
-    min-height: 44px;
+    padding: 0 0.6rem;
     font-size: 1.75rem;
     line-height: 1;
-    color: var(--primaria);
-    background: transparent;
-    border: 2px solid var(--primaria);
     border-radius: 0.25rem;
-    cursor: pointer;
-}
-
-#botaoMenu:hover {
-    background-color: var(--ouro);
 }
 
 nav {
@@ -101,31 +129,18 @@ nav.aberto {
     display: block;
 }
 
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
 nav a {
     display: block;
     padding: 0.85rem 1rem;
     font-weight: 600;
     color: var(--branco);
     text-decoration: none;
-    border-left: 4px solid transparent;
     border-bottom: 1px solid var(--primaria-escura);
 }
 
 nav a[aria-current="page"] {
     background-color: var(--primaria-escura);
-    border-left-color: var(--secundaria);
-}
-
-nav a:hover,
-nav a[aria-current="page"]:hover {
-    color: var(--texto);
-    background-color: var(--ouro);
+    box-shadow: inset 4px 0 0 var(--secundaria);
 }
 
 nav a:focus-visible {
@@ -133,34 +148,31 @@ nav a:focus-visible {
     outline-offset: -3px;
 }
 
-/* ---------- Conteúdo ---------- */
 
 main {
+    display: grid;
+    gap: 1.25rem;
     padding: 1rem;
 }
 
-.hero {
-    position: relative;
-    overflow: hidden;
-    padding: 1.5rem 1.25rem;
+.hero,
+.banner {
     color: var(--branco);
     background-color: var(--primaria-escura);
     border-radius: 1rem;
 }
 
-.hero::after {
-    content: "";
-    position: absolute;
-    top: -3rem;
-    right: -3rem;
-    width: 9rem;
-    height: 9rem;
-    border: 1.25rem solid rgba(255, 255, 255, 0.08);
-    border-radius: 50%;
+.hero {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1.5rem 1.25rem;
 }
 
-.hero .chamada {
-    margin: 0 0 0.5rem;
+.hero p {
+    max-width: 36rem;
+}
+
+.chamada {
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.12em;
@@ -168,23 +180,31 @@ main {
     color: var(--ouro);
 }
 
-.hero h1 {
-    margin: 0 0 0.75rem;
-    font-size: 2rem;
-}
-
-.hero p:last-child {
-    position: relative;
-    margin: 0;
-    max-width: 36rem;
-}
-
 .aviso {
-    margin: 1rem 0;
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
     background-color: #fbf3df;
     border-left: 4px solid var(--secundaria);
+}
+
+.cartao,
+.bloco {
+    overflow: hidden;
+    background-color: var(--branco);
+    border: 1px solid var(--linha);
+    border-radius: 0.75rem;
+    box-shadow: var(--sombra);
+}
+
+.associados,
+.destaques,
+.bloco {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.bloco {
+    padding: 1.25rem;
 }
 
 .topo-diretorio {
@@ -195,15 +215,13 @@ main {
     gap: 0.75rem;
 }
 
-.topo-diretorio h2 {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-.contagem {
-    margin: 0.75rem 0 1rem;
+.contagem,
+.subtitulo,
+.eventos p,
+.descricao-clima {
     color: var(--suave);
 }
+
 
 .alternar {
     display: flex;
@@ -214,18 +232,6 @@ main {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    min-height: 44px;
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-    color: var(--primaria-escura);
-    background-color: var(--branco);
-    border: 2px solid var(--primaria);
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
-
-.alternar button:hover {
-    background-color: var(--ouro);
 }
 
 .alternar button[aria-pressed="true"] {
@@ -234,38 +240,24 @@ main {
     border-color: var(--primaria-escura);
 }
 
-.alternar button[aria-pressed="true"]:hover {
-    color: var(--texto);
-    background-color: var(--ouro);
-}
 
-/* ---------- Visualização em grade ---------- */
-
-.grade {
+.grade,
+.lista {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 1.25rem;
 }
 
-.cartao {
-    overflow: hidden;
-    background-color: var(--branco);
-    border: 1px solid #dfe5e6;
-    border-radius: 0.75rem;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
 .area-logo {
+    display: grid;
+    justify-items: center;
+    gap: 0.6rem;
     padding: 1.25rem 1rem 1rem;
-    text-align: center;
-    background-color: #eef3f3;
+    background-color: var(--claro);
 }
 
 .area-logo img {
-    display: block;
     width: 120px;
     height: 120px;
-    margin: 0 auto 0.6rem;
     padding: 0.75rem;
     object-fit: contain;
     background-color: var(--branco);
@@ -273,7 +265,6 @@ main {
 }
 
 .cidade-topo {
-    margin: 0;
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -281,73 +272,66 @@ main {
 }
 
 .corpo {
+    display: grid;
+    gap: 0.4rem;
     padding: 1.25rem;
 }
 
-.cartao h3 {
-    margin: 0;
-    font-family: var(--fonte-texto);
-    font-size: 1.15rem;
-    font-weight: 600;
+.titulo {
+    display: grid;
+    justify-items: start;
+    gap: 0.2rem;
 }
 
-.cartao .categoria {
-    margin: 0.2rem 0 0;
+.categoria {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--primaria);
 }
 
 .nivel {
-    display: inline-block;
-    margin-top: 0.5rem;
     padding: 0.1rem 0.7rem;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--texto);
+    background-color: var(--nivel);
     border-radius: 1rem;
 }
 
 .nivel-1 {
-    background-color: #dfe9e6;
+    --nivel: #dfe9e6;
 }
 
 .nivel-2 {
-    background-color: #d3d8dc;
+    --nivel: #d3d8dc;
 }
 
 .nivel-3 {
-    background-color: var(--ouro);
+    --nivel: var(--ouro);
 }
 
-.cartao .descricao {
-    margin: 0.75rem 0;
-}
-
-.cartao .endereco,
-.cartao .telefone {
-    margin: 0.4rem 0 0;
+.endereco,
+.telefone,
+.site {
     font-size: 0.9rem;
+}
+
+.endereco,
+.telefone {
     color: var(--suave);
 }
 
-.cartao .site {
-    display: inline-block;
-    margin-top: 0.6rem;
-    font-size: 0.9rem;
-    word-break: break-word;
+.site {
+    overflow-wrap: anywhere;
 }
 
-/* ---------- Visualização em lista ---------- */
-
 .lista {
-    display: block;
+    gap: 0;
 }
 
 .lista .cartao {
+    border-width: 0 0 1px;
     border-radius: 0;
     box-shadow: none;
-    border-width: 0 0 1px;
 }
 
 .lista .cartao:nth-child(odd) {
@@ -359,26 +343,10 @@ main {
     display: none;
 }
 
-.lista .corpo {
-    padding: 1rem;
-}
-
-.lista .cartao .site {
-    margin-top: 0.5rem;
-}
-
-/* ---------- Página inicial ---------- */
-
-.inicio {
-    display: grid;
-    gap: 1.25rem;
-}
 
 .banner {
     position: relative;
     overflow: hidden;
-    background-color: var(--primaria-escura);
-    border-radius: 1rem;
 }
 
 .banner img {
@@ -392,28 +360,19 @@ main {
 .banner-texto {
     position: absolute;
     inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
+    display: grid;
+    align-content: end;
+    justify-items: start;
     gap: 0.75rem;
     padding: 1.25rem;
-    color: var(--branco);
-    background: linear-gradient(to top, rgba(10, 54, 66, 0.95) 10%, rgba(10, 54, 66, 0.3) 70%, rgba(10, 54, 66, 0));
-}
-
-.banner-texto h1 {
-    margin: 0;
-    font-size: 1.75rem;
+    background: linear-gradient(to top, #0a3642f2 10%, #0a36424d 70%, #0a364200);
 }
 
 .banner-texto p {
-    margin: 0;
     max-width: 34rem;
 }
 
 .botao {
-    display: inline-block;
     padding: 0.75rem 1.5rem;
     font-weight: 700;
     color: var(--texto);
@@ -426,135 +385,78 @@ main {
     background-color: var(--branco);
 }
 
-.bloco {
-    padding: 1.25rem;
-    background-color: var(--branco);
-    border: 1px solid #dfe5e6;
-    border-radius: 0.75rem;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-.bloco h2,
-.destaques h2 {
-    margin: 0 0 0.75rem;
-    font-size: 1.4rem;
-}
-
-.bloco h3 {
-    font-family: var(--fonte-texto);
-}
-
 .eventos ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    display: grid;
+    gap: 0.75rem;
 }
 
 .eventos li {
     display: flex;
-    align-items: flex-start;
     gap: 0.9rem;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #e3e8e9;
 }
 
-.eventos li:first-child {
-    padding-top: 0;
-}
-
-.eventos li:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
+.eventos li+li {
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--linha);
 }
 
 .eventos time {
-    flex-shrink: 0;
+    align-self: start;
     min-width: 3.75rem;
-    padding: 0.35rem 0.4rem;
+    padding: 0.35rem 0.5rem;
     font-size: 0.85rem;
     font-weight: 600;
-    line-height: 1.2;
     text-align: center;
     color: var(--branco);
     background-color: var(--primaria);
     border-radius: 0.5rem;
 }
 
-.eventos h3 {
-    margin: 0;
-    font-size: 1rem;
-}
-
 .eventos p {
-    margin: 0.15rem 0 0;
     font-size: 0.9rem;
-    color: var(--suave);
 }
 
 .clima-atual {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 1rem;
 }
 
 .clima-atual img {
-    background-color: #eef3f3;
+    background-color: var(--claro);
     border-radius: 50%;
 }
 
 .temperatura {
-    margin: 0;
     font-size: 2.25rem;
     font-weight: 700;
     line-height: 1;
-}
-
-.descricao-clima {
-    margin: 0.2rem 0 0;
-    color: var(--suave);
-}
-
-.clima h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1rem;
 }
 
 .previsao {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 
 .previsao li {
     padding: 0.6rem 0.4rem;
     font-size: 0.85rem;
     text-align: center;
-    background-color: #eef3f3;
+    background-color: var(--claro);
     border-radius: 0.5rem;
 }
 
-.previsao .dia,
-.previsao .temps {
+.previsao span {
     display: block;
 }
 
-.previsao .dia {
+.dia {
     font-weight: 600;
 }
 
-.destaques .subtitulo {
-    margin: 0 0 1rem;
-    color: var(--suave);
-}
-
-/* ---------- Rodapé ---------- */
 
 footer {
-    margin-top: 1.5rem;
     color: var(--branco);
     background-color: var(--primaria-escura);
 }
@@ -567,14 +469,13 @@ footer {
 }
 
 footer h2 {
-    margin: 0 0 0.5rem;
+    margin-bottom: 0.5rem;
     font-size: 1rem;
     color: var(--ouro);
 }
 
 footer p,
 footer address {
-    margin: 0.2rem 0;
     font-size: 0.9rem;
     font-style: normal;
 }
@@ -587,22 +488,19 @@ footer a {
     display: flex;
     justify-content: center;
     gap: 0.75rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 
 .redes a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     width: 44px;
     height: 44px;
     border: 2px solid var(--branco);
     border-radius: 50%;
 }
 
-.redes a:hover {
+
+:is(nav a, .alternar button, #botaoMenu, .redes a):hover {
     color: var(--texto);
     background-color: var(--ouro);
     border-color: var(--ouro);
