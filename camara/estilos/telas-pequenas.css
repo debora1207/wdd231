@@ -500,7 +500,12 @@ footer a {
 }
 
 
-:is(nav a, .alternar button, #botaoMenu, .redes a):hover {
+nav a:hover,
+nav a[aria-current="page"]:hover,
+.alternar button:hover,
+.alternar button[aria-pressed="true"]:hover,
+#botaoMenu:hover,
+.redes a:hover {
     color: var(--texto);
     background-color: var(--ouro);
     border-color: var(--ouro);
