@@ -81,6 +81,36 @@ const cursos = [
 const listaCursos = document.querySelector("#listaCursos");
 const totalCreditos = document.querySelector("#totalCreditos");
 const botoesFiltro = document.querySelectorAll(".filtro");
+const infosDoCurso = document.querySelector("#infos-do-curso");
+
+function exibirInfosDoCurso(curso) {
+    infosDoCurso.innerHTML = `
+        <div class="modal-conteudo">
+            <button type="button" id="fecharModal" aria-label="Fechar">&#10060;</button>
+            <h2 id="tituloCurso">${curso.assunto} ${curso.numero}</h2>
+            <h3>${curso.titulo}</h3>
+            <p><strong>Créditos</strong>: ${curso.creditos}</p>
+            <p><strong>Certificado</strong>: ${curso.certificado}</p>
+            <p>${curso.descricao}</p>
+            <p><strong>Tecnologias</strong>: ${curso.tecnologia.join(", ")}</p>
+        </div>
+    `;
+
+    infosDoCurso.showModal();
+
+    // O botão é recriado a cada chamada, por isso é buscado depois do innerHTML
+    const fecharModal = infosDoCurso.querySelector("#fecharModal");
+    fecharModal.addEventListener("click", () => {
+        infosDoCurso.close();
+    });
+}
+
+// Fecha o modal ao clicar fora dele (no ::backdrop o alvo do clique é o próprio dialog)
+infosDoCurso.addEventListener("click", (evento) => {
+    if (evento.target === infosDoCurso) {
+        infosDoCurso.close();
+    }
+});
 
 function exibirCursos(lista) {
     listaCursos.innerHTML = "";
@@ -92,20 +122,30 @@ function exibirCursos(lista) {
             cartao.classList.add("concluido");
         }
 
+        const botao = document.createElement("button");
+        botao.type = "button";
+        botao.classList.add("cartao-botao");
+        botao.setAttribute("aria-haspopup", "dialog");
+
         const codigo = document.createElement("span");
         codigo.classList.add("codigo");
         codigo.textContent = `${curso.assunto} ${curso.numero}`;
 
         cartao.title = curso.titulo;
-        cartao.append(codigo);
+        botao.append(codigo);
 
         if (curso.concluido) {
             const situacao = document.createElement("span");
             situacao.classList.add("situacao");
             situacao.textContent = "\u2713 Concluído";
-            cartao.append(situacao);
+            botao.append(situacao);
         }
 
+        botao.addEventListener("click", () => {
+            exibirInfosDoCurso(curso);
+        });
+
+        cartao.append(botao);
         listaCursos.appendChild(cartao);
     });
 
