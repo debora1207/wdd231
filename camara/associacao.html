@@ -83,7 +83,7 @@
                     <span>Cargo na organização</span>
                     <input type="text" id="cargo" name="cargo"
                         title="Use apenas letras, hifens e espaços, com no mínimo 7 caracteres"
-                        autocomplete="organization-title" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\- ]{7,}">
+                        autocomplete="cargo-na-organizacao" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\- ]{7,}">
                 </label>
 
                 <label for="email">
@@ -101,7 +101,7 @@
                 <label for="organizacao">
                     <span>Empresa ou organização <span aria-hidden="true">*</span></span>
                     <input type="text" id="organizacao" name="organizacao"
-                        title="Digite o nome da sua empresa ou organização" autocomplete="organization" required>
+                        title="Digite o nome da sua empresa ou organização" autocomplete="organizacao" required>
                 </label>
 
                 <label for="descricao">
@@ -110,25 +110,15 @@
                         title="Descreva em poucas palavras a atividade da sua empresa ou organização"></textarea>
                 </label>
 
-                <fieldset class="opcoes">
-                    <legend>Nível de associação</legend>
-                    <label for="nivel-np">
-                        <input type="radio" id="nivel-np" name="nivel" value="np">
-                        <span>Associação NP (sem fins lucrativos)</span>
-                    </label>
-                    <label for="nivel-bronze">
-                        <input type="radio" id="nivel-bronze" name="nivel" value="bronze" checked>
-                        <span>Associação Bronze</span>
-                    </label>
-                    <label for="nivel-silver">
-                        <input type="radio" id="nivel-silver" name="nivel" value="silver">
-                        <span>Associação Prata</span>
-                    </label>
-                    <label for="nivel-gold">
-                        <input type="radio" id="nivel-gold" name="nivel" value="gold">
-                        <span>Associação Ouro</span>
-                    </label>
-                </fieldset>
+                <label for="nivel">
+                    <span>Nível de associação</span>
+                    <select id="nivel" name="nivel" title="Escolha o nível de associação">
+                        <option value="np">Associação NP (sem fins lucrativos)</option>
+                        <option value="bronze" selected>Associação Bronze</option>
+                        <option value="silver">Associação Prata</option>
+                        <option value="gold">Associação Ouro</option>
+                    </select>
+                </label>
 
                 <input type="hidden" id="timestamp" name="timestamp">
 
@@ -140,25 +130,25 @@
             <h2 id="titulo-niveis">Níveis de associação</h2>
 
             <div class="planos">
-                <article class="plano plano-np" style="--ordem: 0">
+                <article class="plano plano-np">
                     <h3>Associação NP</h3>
                     <p>Para organizações sem fins lucrativos.</p>
                     <button type="button" data-modal="modal-np">Saiba mais</button>
                 </article>
 
-                <article class="plano plano-bronze" style="--ordem: 1">
+                <article class="plano plano-bronze">
                     <h3>Associação Bronze</h3>
                     <p>O primeiro passo para fazer parte da rede.</p>
                     <button type="button" data-modal="modal-bronze">Saiba mais</button>
                 </article>
 
-                <article class="plano plano-prata" style="--ordem: 2">
+                <article class="plano plano-prata">
                     <h3>Associação Prata</h3>
                     <p>Mais visibilidade e treinamentos.</p>
                     <button type="button" data-modal="modal-silver">Saiba mais</button>
                 </article>
 
-                <article class="plano plano-ouro" style="--ordem: 3">
+                <article class="plano plano-ouro">
                     <h3>Associação Ouro</h3>
                     <p>Todos os benefícios, com prioridade.</p>
                     <button type="button" data-modal="modal-gold">Saiba mais</button>
