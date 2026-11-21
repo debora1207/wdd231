@@ -110,15 +110,25 @@
                         title="Descreva em poucas palavras a atividade da sua empresa ou organização"></textarea>
                 </label>
 
-                <label for="membership">
-                    <span>Nível de associação</span>
-                    <select id="membership" name="membership" title="Escolha o nível de associação">
-                        <option value="np">Associação NP (sem fins lucrativos)</option>
-                        <option value="bronze" selected>Associação Bronze</option>
-                        <option value="silver">Associação Prata</option>
-                        <option value="gold">Associação Ouro</option>
-                    </select>
-                </label>
+                <fieldset class="opcoes">
+                    <legend>Nível de associação</legend>
+                    <label for="membership-np">
+                        <input type="radio" id="membership-np" name="membership" value="np">
+                        <span>Associação NP (sem fins lucrativos)</span>
+                    </label>
+                    <label for="membership-bronze">
+                        <input type="radio" id="membership-bronze" name="membership" value="bronze" checked>
+                        <span>Associação Bronze</span>
+                    </label>
+                    <label for="membership-silver">
+                        <input type="radio" id="membership-silver" name="membership" value="silver">
+                        <span>Associação Prata</span>
+                    </label>
+                    <label for="membership-gold">
+                        <input type="radio" id="membership-gold" name="membership" value="gold">
+                        <span>Associação Ouro</span>
+                    </label>
+                </fieldset>
 
                 <input type="hidden" id="timestamp" name="timestamp">
 
